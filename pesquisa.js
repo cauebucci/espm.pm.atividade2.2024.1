@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
 import Botao from "./botao"
-import UniversityList from './listaUniversidades';
+import UniversityList from './Universidades';
 import axios from 'axios';
-import ContextoFavoritas from './contextoFavoritas';
+import ContextoFavoritas from './Favoritas';
 
 export default function BuscarUniversidades({ navigation }) {
     let { listaFavoritas, setListaFavoritas } = useContext(ContextoFavoritas)
@@ -58,7 +58,7 @@ export default function BuscarUniversidades({ navigation }) {
             <TextInput
                 style={styles.filtroUniversidade}
                 value={nomeUniversidadePesquisa}
-                placeholder={"Nome da universidade"}
+                placeholder={"Universidade"}
                 onChangeText={setNomeUniversidadePesquisa} />
             <TextInput
                 style={styles.filtroUniversidade}
@@ -84,7 +84,7 @@ export default function BuscarUniversidades({ navigation }) {
     </View>
 }
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create({      
     container: {
         flex: 1,
         backgroundColor: '#0197F6',
